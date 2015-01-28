@@ -1,0 +1,11 @@
+#!/bin/sh
+#  requires a ~/.netrc file for credentials
+
+# mostly curious about:
+#   "name": "test_status"
+#   "system_name": "custom_test_status"
+#   "id": 6
+#   "type_id": 6
+#   "options": {"items": "0, In Design\n1, Manual\n2, Automated\n3, Automatable"}
+
+curl --silent --header "Content-Type: application/json" --netrc "https://testrail.ops.puppetlabs.net/index.php?/api/v2/get_case_fields" | python -m json.tool

@@ -1,0 +1,6 @@
+#!/bin/sh
+# get testrail test cases given a project ID and suite ID (see get_cases)
+#  optional: section ID
+#  requires a ~/.netrc file for credentials
+
+curl --silent --header "Content-Type: application/json" --netrc "https://testrail.ops.puppetlabs.net/index.php?/api/v2/get_cases/$1&suite_id=$2" | python -m json.tool

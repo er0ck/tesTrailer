@@ -1,0 +1,5 @@
+#!/bin/sh
+# get testrail test suites given a project ID
+#  requires a ~/.netrc file for credentials
+
+curl --silent --header "Content-Type: application/json" --netrc "https://testrail.ops.puppetlabs.net/index.php?/api/v2/get_statuses" | python -m json.tool
